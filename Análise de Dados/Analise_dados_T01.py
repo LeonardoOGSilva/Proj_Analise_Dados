@@ -16,9 +16,10 @@ df_vendas["Total"] = df_vendas['Quantidade'] * df_vendas['Preco']
 Total_vendedor = df_vendas.groupby('Vendedor')['Total'].sum().sort_values(ascending=True)
 
 matplotlib.pyplot.figure(figsize=(10,6))
-Total_vendedor.plot(kind='bar')
+Total_vendedor.plot(kind='barh')
 matplotlib.pyplot.title("Maiores Vendedores")
-matplotlib.pyplot.xlabel("Vendedores")
-matplotlib.pyplot.ylabel("Total de vendas")
+matplotlib.pyplot.xlabel("Total de vendas")
+matplotlib.pyplot.ylabel("Vendedores")
+
 matplotlib.pyplot.show()
 
